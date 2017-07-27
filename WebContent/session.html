@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Session Demo</title>
+<script type="text/javascript">
+
+
+	function sessionAlert() {
+			
+		document.getElementById("location").value = window.location.location;
+		document.getElementById("href").value = window.location.href;
+	
+	}
+</script>
+</head>
+<body>
+	<button id="sessionAlert" onclick="sessionAlert()"> alert session info </button><br>
+	<input id="location" value="" style="width: 500px;"><br>
+	<input id="href" value="" style="width: 500px;"><br>
+	
+
+</body>
+</html>

@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Index.html</title>
+<script type="text/javascript">
+
+	//alert(window.screenX);
+	//alert(screen.height);
+	//alert(screen.width);
+	//alert(document.cookie);
+	function formSubmit() {
+		//setTimeout("document.getElementById('form1').submit();", 20000);
+		setTimeout(function(){
+			document.getElementById("form1").submit();
+		},300);
+	}
+</script>
+</head>
+<body>
+
+	<form action="hello.do?name=userName" method="post" id="form1">
+		<select id="selectedID" name="selectedID" >
+			<option >1</option>
+			<option selected="selected">2</option>
+		</select>
+		<input type="hidden" value="hiddenValue" name="hidden1">
+		<!-- <button> form1 </button> -->
+		<input type="button" value=" form1 " onclick="this.disabled=true;formSubmit();">
+	</form>
+
+	<br>
+	<!-- 
+	1)get方式提交表单时 action里面不能用url传值, post则可以通过url传值 
+	2)get方法提交表单时，form的值会拼接在url上，url 为 /HttpDemo/hello.do?selectedID=1&hidden1=hiddenValue
+	  post方法提交form时，form的值 不会拼接在url上，url 为 /HttpDemo/hello.do?name=userName
+	   webform 实际数据为 
+		   QueryString:
+		   Name 		Value
+		   -------------------------
+		   name 		userName
+		   Body:
+		   Name 		Value
+		   --------------------------
+		   selectedID	1
+		   hidden1		hiddenValue
+	-->
+	
+	<!-- <form action="hello.do?name=userName" id="form2" name="form2" method="post" >
+		<button type="input" onclick="form2Submit()"> form2 </button>
+		<select id="selectedID" name="selectedID" >
+			<option selected="selected">1</option>
+			<option>2</option>
+		</select>
+		<input type="hidden" value="hiddenValue" name="hidden1">
+	</form> -->
+
+</body>
+</html>
